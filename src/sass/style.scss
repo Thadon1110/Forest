@@ -1,0 +1,566 @@
+@use 'colors' as *;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.6rem;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 100%;
+}
+
+.section-heading {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 4rem;
+	margin-top: 5rem;
+	cursor: default;
+
+	h2 {
+		font-weight: 200;
+	}
+}
+
+.nav {
+	position: sticky;
+	top: 0;
+	background-color: $white;
+	border-bottom: 1px solid black;
+	z-index: 10;
+
+	&__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	&__logo {
+		display: flex;
+		justify-content: flex-start;
+		width: 30%;
+		margin-left: 1em;
+		font-size: 4rem;
+		cursor: default;
+
+		.fa-tree {
+			color: $gray;
+		}
+	}
+
+	&__hamburgermenu {
+		display: flex;
+		justify-content: flex-end;
+		width: 70%;
+		padding: 0.8em 0.8em;
+		margin-right: 1em;
+		font-size: 4rem;
+
+		.fa-bars {
+			cursor: pointer;
+		}
+	}
+
+	&__menu {
+		display: none;
+	}
+
+	&__mobile {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+		height: 100vh;
+		background-color: $white;
+		transform: translateX(100%);
+		transition: 0.3s ease-out;
+		z-index: 100;
+
+		&--active {
+			transform: translateX(0);
+		}
+
+		a,
+		a::before,
+		a::after {
+			transition: color 0.3s;
+		}
+
+		a {
+			position: relative;
+			padding: 40px;
+			font-size: 4rem;
+			text-decoration: none;
+			color: $black;
+		}
+
+		a::after {
+			content: '';
+			position: absolute;
+			bottom: 0.5em;
+			left: 0;
+			height: 3px;
+			width: 100%;
+			background-color: $secondary;
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: transform 0.5s;
+		}
+
+		a:hover::after {
+			transform: scaleX(1);
+			transform-origin: left;
+		}
+
+		a:hover {
+			color: $secondary;
+		}
+
+		div {
+			position: absolute;
+			padding: 30px;
+			right: 0;
+			top: 0;
+			font-size: 4rem;
+			cursor: pointer;
+		}
+	}
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+	height: 40vh;
+	background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/header_min.jpg');
+	background-size: cover;
+	background-position: center;
+	scroll-margin-top: 105px;
+
+	&__text {
+		padding: 2rem;
+		font-size: 2.5rem;
+		cursor: default;
+		color: $white;
+	}
+}
+
+.aboutus {
+	scroll-margin-top: 104px;
+
+	&__img {
+		width: 100%;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin: 4em 0;
+
+		&-text {
+			font-size: 2.2rem;
+			padding: 0.5em;
+		}
+
+		&-title {
+			font-size: 3rem;
+			margin: 0.5em 0;
+		}
+	}
+}
+
+.adventure {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 50rem;
+	background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('../img/adventure_min.jpg');
+	background-size: cover;
+	background-position: center;
+
+	.wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	h2 {
+		width: 80%;
+		padding: 1em;
+		font-size: 3rem;
+		text-align: center;
+		color: $white;
+		border: 1px solid $white;
+		cursor: default;
+		transition: all 0.5s;
+	}
+
+	h2:hover {
+		color: #000;
+		background: $white;
+		mix-blend-mode: screen;
+	}
+}
+
+.offers {
+	display: flex;
+	scroll-margin-top: 104px;
+
+	&__desc {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 1.8em;
+		font-size: 3rem;
+		cursor: default;
+	}
+
+	&__cards {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		width: 100%;
+		margin-bottom: 20px;
+		text-align: center;
+		flex-wrap: wrap;
+		cursor: default;
+
+		&-others {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 40px;
+			font-size: 3rem;
+			text-align: center;
+			cursor: default;
+
+			a {
+				position: relative;
+				padding: 5px;
+				color: rgb(0, 140, 255);
+				text-decoration: none;
+				color: $secondary;
+				z-index: 0;
+			}
+
+			a,
+			a::after,
+			a::before {
+				transition: 0.3s;
+			}
+
+			a::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 0.1rem;
+				width: 100%;
+				background-color: $secondary;
+				z-index: -1;
+			}
+
+			a:hover {
+				color: $black;
+			}
+
+			a:hover::after {
+				height: 100%;
+			}
+		}
+	}
+
+	&__card {
+		box-shadow: 0 0 0.8rem rgb(161, 161, 161);
+		border-radius: 8px;
+		margin: 2em;
+		padding: 2em 4em;
+		width: 320px;
+		transition: transform 0.5s;
+
+		&-title {
+			font-size: 3.8rem;
+			font-weight: 400;
+		}
+
+		&-price {
+			font-size: 4rem;
+			font-weight: bold;
+			padding: 0.2em 0;
+		}
+
+		&-options {
+			padding: 0.6em 0 1.4em;
+			font-size: 1.8rem;
+		}
+
+		li {
+			text-align: left;
+			padding: 0.2em 0;
+			padding-left: 10px;
+		}
+
+		li::marker {
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+			padding: 1em;
+		}
+
+		&-option-in::marker {
+			content: '\f00c';
+			color: $secondary;
+		}
+
+		&-option-out::marker {
+			content: '\f068';
+		}
+
+		&-option-out {
+			color: #757575;
+		}
+
+		&-button {
+			width: 100%;
+			padding: 0.4em;
+			border-radius: 8px;
+			border: transparent;
+			box-shadow: 0 0.4rem 0.8rem rgb(161, 161, 161);
+			background-color: $white;
+			font-size: 2rem;
+			transition: background-color 0.5s, box-shadow 0.3s;
+			cursor: pointer;
+		}
+
+		&-button:hover {
+			background-color: $secondary;
+			box-shadow: 0 0 0.4rem rgb(161, 161, 161);
+		}
+
+		&-selected {
+			.offers__card-button {
+				background-color: $secondary;
+			}
+
+			.offers__card-button:hover {
+				background-color: $secondarydarker;
+			}
+		}
+	}
+
+	&__card:hover {
+		transform: scale(1.1);
+	}
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	background-color: #f5f5f5;
+
+	.wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&__map {
+		display: flex;
+		width: 100%;
+		border-bottom: 1px solid black;
+
+		&-logo {
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			padding: 80px;
+			width: 50%;
+			font-size: 7rem;
+			cursor: default;
+
+			.fa-tree {
+				color: $gray;
+			}
+		}
+	}
+
+	&__block {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50%;
+		padding-bottom: 40px;
+		width: 50%;
+		text-align: center;
+		font-size: 2rem;
+
+		&-text {
+			div {
+				padding-bottom: 20px;
+
+				p {
+					padding: 10px 0;
+				}
+
+				a {
+					text-decoration: none;
+					font-weight: 400;
+					color: $black;
+				}
+
+				h3 {
+					padding: 20px 0;
+					font-size: 1.5em;
+					font-weight: bold;
+					cursor: default;
+				}
+			}
+		}
+	}
+
+	&__copyright {
+		display: flex;
+		width: 100%;
+		padding: 40px;
+		font-size: 2rem;
+		cursor: default;
+	}
+}
+
+//CONTACT
+.map {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+	width: 100%;
+	background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/header_min.jpg');
+	background-size: cover;
+	background-position: center;
+
+	#map {
+		height: 80%;
+		width: 80%;
+		max-width: 1200px;
+		border-radius: 10px;
+		border: 5px dashed $secondarydarker;
+	}
+}
+
+.email {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 50px;
+	font-size: 2rem;
+
+	h2 {
+		text-align: center;
+		padding-bottom: 30px;
+		text-transform: uppercase;
+	}
+
+	.section-heading {
+		margin: 2rem;
+	}
+
+	&__items {
+		display: flex;
+
+		&-item {
+			display: flex;
+			flex-direction: column;
+			width: 45%;
+
+			&:nth-child(1) {
+				margin-right: 5%;
+			}
+
+			&:nth-child(2) {
+				margin-left: 5%;
+			}
+		}
+	}
+
+	.form {
+		&__items {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__inputs {
+			padding: 15px 0;
+		}
+	}
+
+	label {
+		font-weight: bold;
+	}
+
+	input {
+		height: 3rem;
+		padding: 0.5em;
+		border-radius: 5px;
+		border: 2px solid black;
+		font-weight: bold;
+		font-size: 1.5rem;
+	}
+
+	textarea {
+		max-width: 100%;
+		min-width: 100%;
+		padding: 0.5em;
+		border-radius: 5px;
+		border: 2px solid black;
+		font-weight: bold;
+		font-size: 1.5rem;
+	}
+
+	.button {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	button {
+		padding: 5px 10px;
+		max-width: 5em;
+		font-size: 2rem;
+		text-transform: uppercase;
+		border-radius: 8px;
+		background-color: $secondary;
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
+
+	button:hover {
+		background-color: $secondarydarker;
+	}
+}
+
+@import 'small';
+@import 'medium';
+@import 'large';

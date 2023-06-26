@@ -1,0 +1,20 @@
+@media (min-width: 772px) {
+	.header {
+		background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/header_max.jpg');
+	}
+
+	.adventure {
+		background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('../img/adventure_max.jpg');
+	}
+
+	.offers__cards {
+		display: flex;
+		justify-content: center;
+		font-display: row;
+		flex-wrap: wrap;
+	}
+
+	.map {
+		background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/header_max.jpg');
+	}
+}

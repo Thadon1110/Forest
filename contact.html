@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Forest Group</title>
+		<script src="https://unpkg.com/feather-icons"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&family=Raleway:wght@200;400;700&display=swap" rel="stylesheet" />
+		<script src="https://kit.fontawesome.com/09446dd6c3.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="./dist/css/style.min.css" />
+		<script>
+			let map;
+
+			async function initMap() {
+				const myLatLng = { lat: 50.0881776, lng: 19.8928415 };
+				const map = new google.maps.Map(document.getElementById('map'), {
+					zoom: 19,
+					center: myLatLng,
+				});
+
+				new google.maps.Marker({
+					position: myLatLng,
+					map,
+					title: 'Siedziba Forest',
+				});
+			}
+
+			initMap();
+		</script>
+	</head>
+	<body>
+		<nav class="nav">
+	<div class="wrapper">
+		<div class="nav__container">
+			<div class="nav__logo"><i class="fa-solid fa-tree"></i>&nbsp;<span>Forest</span></div>
+			<div class="nav__menu">
+				<a href="index.html#home" class="active">Home</a>
+				<a href="index.html#aboutus">O nas</a>
+				<a href="index.html#offers">Oferta</a>
+				<a href="contact.html">Kontakt</a>
+			</div>
+
+			<div class="nav__hamburgermenu">
+				<i class="fa-solid fa-bars"></i>
+			</div>
+		</div>
+
+		<div class="nav__mobile">
+			<div>
+				<i class="fa-solid fa-xmark"></i>
+			</div>
+			<a href="index.html#home">Home</a>
+			<a href="index.html#aboutus">O nas</a>
+			<a href="index.html#offers">Oferta</a>
+			<a href="contact.html">Kontakt</a>
+		</div>
+	</div>
+</nav>
+
+
+		<main>
+			<section class="map">
+				<div id="map"></div>
+			</section>
+
+			<section class="email">
+				<div class="wrapper">
+					<div class="section-heading">
+						<h2>KONTAKT</h2>
+					</div>
+
+					<form action="">
+						<div class="email__items form__inputs">
+							<div class="email__items-item">
+								<label for="name">Imię:</label>
+								<input type="text" id="name" />
+							</div>
+
+							<div class="email__items-item">
+								<label for="email">Email:</label>
+								<input type="text" id="email" />
+							</div>
+						</div>
+
+						<div class="form__items form__inputs">
+							<label for="topic">Tytuł:</label>
+							<input type="text" id="topic" />
+						</div>
+
+						<div class="form__items form__inputs">
+							<label for="name">Treść:</label>
+							<textarea id="name"></textarea>
+						</div>
+
+						<div class="button">
+							<button type="submit">wyślij</button>
+						</div>
+					</form>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+	<section class="footer__map">
+		<div class="wrapper">
+			<div class="footer__map-logo"><i class="fa-solid fa-tree"></i>&nbsp;<span>Forest</span></div>
+
+			<div class="footer__block">
+				<div class="footer__block-text">
+					<div>
+						<h3>O nas</h3>
+						<p><a href="index.html#aboutus">Historia</a></p>
+						<p><a href="index.html#aboutus">Parki</a></p>
+						<p><a href="index.html#aboutus">Opinie</a></p>
+					</div>
+
+					<div>
+						<h3>Nasza firma</h3>
+						<p><a href="index.html#home">Praca</a></p>
+						<p><a href="index.html#home">Kadry</a></p>
+						<p><a href="index.html#home">Zarząd</a></p>
+					</div>
+
+					<div>
+						<h3>Dokumenty</h3>
+						<p><a href="index.html#home">Wnioski</a></p>
+						<p><a href="index.html#home">Rezerwacje</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="footer__copyright">
+		<div class="wrapper">
+			<p>&copy;<span class="footer__copyright-year"></span> Forest Group Company Ltd.</p>
+		</div>
+	</section>
+</footer>
+
+
+		<script>
+			feather.replace();
+		</script>
+		<script>
+			((g) => {
+				var h,
+					a,
+					k,
+					p = 'The Google Maps JavaScript API',
+					c = 'google',
+					l = 'importLibrary',
+					q = '__ib__',
+					m = document,
+					b = window;
+				b = b[c] || (b[c] = {});
+				var d = b.maps || (b.maps = {}),
+					r = new Set(),
+					e = new URLSearchParams(),
+					u = () =>
+						h ||
+						(h = new Promise(async (f, n) => {
+							await (a = m.createElement('script'));
+							e.set('libraries', [...r] + '');
+							for (k in g)
+								e.set(
+									k.replace(/[A-Z]/g, (t) => '_' + t[0].toLowerCase()),
+									g[k]
+								);
+							e.set('callback', c + '.maps.' + q);
+							a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+							d[q] = f;
+							a.onerror = () => (h = n(Error(p + ' could not load.')));
+							a.nonce = m.querySelector('script[nonce]')?.nonce || '';
+							m.head.append(a);
+						}));
+				d[l] ? console.warn(p + ' only loads once. Ignoring:', g) : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+			})({
+				key: 'AIzaSyAKlc0vT6gcxzylkdoJZEsgq8oB328tfS8',
+				v: 'weekly',
+				// Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+				// Add other bootstrap parameters as needed, using camel case.
+			});
+		</script>
+		<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKlc0vT6gcxzylkdoJZEsgq8oB328tfS8&callback=initMap"></script>
+		<script src="./dist/js/main.min.js"></script>
+	</body>
+</html>

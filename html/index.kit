@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Forest Group</title>
+		<script src="https://unpkg.com/feather-icons"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&family=Raleway:wght@200;400;700&display=swap" rel="stylesheet" />
+		<script src="https://kit.fontawesome.com/09446dd6c3.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="./dist/css/style.min.css" />
+	</head>
+	<body class="main-page">
+		<!-- @include 'nav.kit' -->
+
+		<header class="section header" id="home">
+			<div class="wrapper">
+				<div class="header__text">
+					<p>Forest group</p>
+					<h1 class="header__text-title">Najpiękniejszy park w Twojej okolicy!</h1>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="section aboutus" id="aboutus">
+				<div class="wrapper">
+					<div class="section-heading">
+						<h2>o nas</h2>
+					</div>
+
+					<div class="aboutus__box">
+						<div class="aboutus__box-img">
+							<img src="./dist/img/aboutus_min.jpg" alt="Malutka wysepka z rosnącym drzewkiem na środku jeziora" class="aboutus__img" />
+						</div>
+						<div class="aboutus__box-text">
+							<h3 class="aboutus__box-title">Niezapomniane przygody</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam aspernatur distinctio amet qui, deserunt magnam aliquid consequatur
+								tempore laboriosam debitis molestiae. Accusantium inventore nisi voluptatum hic aliquam omnis laboriosam totam odio aspernatur dolores
+								accusamus adipisci sint similique tempore quae, obcaecati delectus illum, alias voluptates voluptatem ipsum. Deleniti, amet tempora?
+								Delectus. www.MMCSchool.pl
+							</p>
+						</div>
+					</div>
+
+					<div class="aboutus__desc"></div>
+				</div>
+			</section>
+
+			<section class="adventure">
+				<div class="wrapper">
+					<h2>Przygoda dla całej rodziny</h2>
+				</div>
+			</section>
+
+			<section class="section offers" id="offers">
+				<div class="wrapper">
+					<div class="section-heading">
+						<h2>oferta</h2>
+					</div>
+
+					<div class="offers__desc">
+						<p>Wybierz jedną z naszych wspaniałych ofert!</p>
+					</div>
+
+					<div class="offers__cards">
+						<div class="offers__card">
+							<h3 class="offers__card-title">Demo</h3>
+							<p class="offers__card-price">$0</p>
+							<ul class="offers__card-options">
+								<li class="offers__card-option-in">opcja w pakiecie</li>
+								<li class="offers__card-option-in">opcja w pakiecie</li>
+								<li class="offers__card-option-out">opcja poza pakietem</li>
+								<li class="offers__card-option-out">opcja poza pakietem</li>
+								<li class="offers__card-option-out">opcja poza pakietem</li>
+							</ul>
+							<button class="offers__card-button">Wybierz</button>
+						</div>
+
+						<div class="offers__card offers__card-selected">
+							<h3 class="offers__card-title">Standard</h3>
+							<p class="offers__card-price">$99</p>
+							<ul class="offers__card-options">
+								<li class="offers__card-option-in">opcja w pakiecie</li>
+								<li class="offers__card-option-in">opcja w pakiecie</li>
+								<li class="offers__card-option-in">opcja w pakiecie</li>
+								<li class="offers__card-option-out">opcja poza pakietem</li>
+								<li class="offers__card-option-out">opcja poza pakietem</li>
+							</ul>
+							<button class="offers__card-button offers__card-button-selected">Wybierz</button>
+						</div>
+
+						<div class="offers__card">
+							<h3 class="offers__card-title">Premium</h3>
+							<p class="offers__card-price">$299</p>
+							<ul class="offers__card-options">
+								<li class="offers__card-option-in">opcja w pakiecie</li>
+								<li class="offers__card-option-in">opcja w pakiecie</li>
+								<li class="offers__card-option-in">opcja w pakiecie</li>
+								<li class="offers__card-option-in">opcja w pakiecie</li>
+								<li class="offers__card-option-in">opcja w pakiecie</li>
+							</ul>
+							<button class="offers__card-button">Wybierz</button>
+						</div>
+					</div>
+					<span class="offers__cards-others">Zobacz nasze inne&nbsp;<a href="offers.html">oferty</a>.</span>
+				</div>
+			</section>
+		</main>
+
+		<!-- @include 'footer.kit' -->
+
+		<script>
+			feather.replace();
+		</script>
+		<script src="./dist/js/main.min.js"></script>
+		<script src="./dist/js/scrollspy.min.js"></script>
+	</body>
+</html>
