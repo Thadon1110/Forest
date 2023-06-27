@@ -74,29 +74,38 @@
 
 					<form action="">
 						<div class="email__items form__inputs">
-							<div class="email__items-item">
+							<div class="email__items-item form-box">
 								<label for="name">Imię:</label>
-								<input type="text" id="name" />
+								<input type="text" id="name" placeholder="Wprowadź swoje imię" />
+								<span class="error-text"></span>
 							</div>
 
-							<div class="email__items-item">
-								<label for="email">Email:</label>
-								<input type="text" id="email" />
+							<div class="email__items-item form-box">
+								<label for="email">E-mail:</label>
+								<input type="text" id="email" placeholder="Wprowadź swój e-mail" />
+								<span class="error-text"></span>
 							</div>
 						</div>
 
-						<div class="form__items form__inputs">
+						<div class="form__items form__inputs form-box">
 							<label for="topic">Tytuł:</label>
-							<input type="text" id="topic" />
+							<input type="text" id="topic" placeholder="Wprowadź tytuł wiadomości" />
+							<span class="error-text"></span>
 						</div>
 
-						<div class="form__items form__inputs">
-							<label for="name">Treść:</label>
-							<textarea id="name"></textarea>
+						<div class="form__items form__inputs form-box">
+							<label for="content">Treść:</label>
+							<textarea id="content" placeholder="Wprowadź treść wiadomości"></textarea>
+							<span class="error-text"></span>
 						</div>
 
 						<div class="button">
-							<button type="submit">wyślij</button>
+							<button type="submit" class="send">wyślij</button>
+						</div>
+
+						<div class="popup">
+							<p>Formularz został poprawnie wysłany!</p>
+							<button class="close">Zamknij</button>
 						</div>
 					</form>
 				</div>
@@ -187,5 +196,6 @@
 		</script>
 		<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKlc0vT6gcxzylkdoJZEsgq8oB328tfS8&callback=initMap"></script>
 		<script src="./dist/js/main.min.js"></script>
+		<script src="./dist/js/email.min.js"></script>
 	</body>
 </html>
